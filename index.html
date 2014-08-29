@@ -8,17 +8,32 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/mqtt_protocol.js"></script>
         <script type="text/javascript" src="js/mqtt_controller.js"></script>
+        <script type="text/javascript" src="js/testing.js"></script>
         <title>MQTT TEST</title>
     </head>
     <body>
 
         <center><h1>Pruebas MQTT</h1></center>
-        <button onclick="alert('Inicio Conexion'); client.connect(options);">1. Connect</button>
-        <button onclick="alert('Inicio Suscripcion'); client.subscribe('pokemon/#', {qos: 2}); alert('Suscrito');">2. Subscribe</button>
-        <button onclick="alert('Inicio Publicacion'); publish('Marcelo MQTT ','pokemon/',2);">3. Publish</button>
-        <button onclick="client.disconnect();">4. Disconnect</button>
+        <p>Test 1 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, sin estar suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
+        <button onclick="test1(0);">Test 1 - QS 0</button>
+        <button onclick="test1(1);">Test 1 - QS 1</button>
+        <button onclick="test1(2);">Test 1 - QS 2</button>
+        <br>
+        <p>Test 2 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, estando suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
+        <button onclick="test2(0,0);">Test 2 - QS Envío 0, QS Recepción 0</button>
+        <button onclick="test2(1,0);">Test 2 - QS Envío 1, QS Recepción 0</button>
+        <button onclick="test2(2,0);">Test 2 - QS Envío 2, QS Recepción 0</button>
+        <br>
+        <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 1</button>
+        <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 1</button>
+        <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 1</button>
+        <br>
+        <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 2</button>
+        <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 2</button>
+        <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 2</button>
+        <br>
+        <button onclick="finish_test();">Finalizar Test</button>
+        <div id="estado"></div>
         <div id="mensajes"></div>
-
-
     </body>
 </html>
