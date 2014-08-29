@@ -4,6 +4,7 @@
  //Gets  called if the websocket/mqtt connection gets disconnected for any reason
  client.onConnectionLost = function (responseObject) {
      //Depending on your scenario you could implement a reconnect logic here
+     alert(responseObject.errorCode);
      alert("Conexión Perdida: " + responseObject.errorMessage);
  };
 
