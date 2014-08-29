@@ -12,10 +12,10 @@
     <body>
 
         <center><h1>Pruebas MQTT</h1></center>
-        <button onclick="alert('Connection'); client.connect(options);">1. Connect</button>
-        <!--<button onclick="alert('Suscribe'); client.subscribe('pokemon/#', {qos: 2}); alert('Subscribed');">2. Subscribe</button>
-        <button onclick="alert('Publish');publish('poke poke ','pokemon/',2);">3. Publish</button>
-        <button onclick="client.disconnect();">(4. Disconnect)</button>-->
+        <button onclick="alert('Inicio Conexion'); client.connect(options);">1. Connect</button>
+        <button onclick="alert('Inicio Suscripcion'); client.subscribe('pokemon/#', {qos: 2}); alert('Suscrito');">2. Subscribe</button>
+        <button onclick="alert('Inicio Publicacion');publish('Marcelo MQTT ','pokemon/',2);">3. Publish</button>
+        <button onclick="client.disconnect();">(4. Disconnect)</button>
         <div id="mensajes"></div>
 
 
