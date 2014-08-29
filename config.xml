@@ -24,6 +24,8 @@
     <preference name="android-minSdkVersion" value="7" />
     <preference name="android-installLocation" value="auto" />
     
+	<gap:platform name="android" />
+	
 	<icon src="icon.png" />
     
 	<icon gap:density="ldpi" gap:platform="android" src="res/icon/android/icon-36-ldpi.png" />
@@ -38,8 +40,6 @@
     <gap:splash gap:density="xhdpi" gap:platform="android" src="res/screen/android/screen-xhdpi-portrait.png" />
 	
 	<gap:plugin name="com.ququplay.websocket.websocket" />
-	
-	<gap:platform name="android" />
 	
     <access origin="*" />
 
