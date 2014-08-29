@@ -1,6 +1,9 @@
   //Using the HiveMQ public Broker, with a random client Id
  var client = new Messaging.Client("broker.mqttdashboard.com", 8000, "USER_ID_" + parseInt(Math.random() * 100, 10));
- var msj = 0;
+ var msj_rec = 0;
+ var msj_env = 0;
+
+ var cant_msj = 1000;
 
  //Gets  called if the websocket/mqtt connection gets disconnected for any reason
  client.onConnectionLost = function (responseObject) {
@@ -12,8 +15,10 @@
  client.onMessageArrived = function (message) {
      //Do something with the push message you received
      $('#mensajes').append('<span>Topico: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
-     msj = msj+1;
-     if(msj==1000){
+     msj_rec = msj_rec+1;
+     console.log("msj_rec:" + msj_rec);
+     if(msj_rec==cant_msj){
+       msj_rec=0;
        finish_test();
      }
  };
@@ -25,4 +30,9 @@
      message.destinationName = topic;
      message.qos = qos;
      client.send(message);
+     msj_env = msj_env+1;
+     console.log("msj_env:" + msj_env);
+     if(msj_env==cant_msj){
+       msj_env=0;
+     }
  }

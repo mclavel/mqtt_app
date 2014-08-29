@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/mqtt_protocol.js"></script>
-        <script type="text/javascript" src="js/mqtt_controller.js"></script>
-        <script type="text/javascript" src="js/testing.js"></script>
-        <title>MQTT TEST</title>
+      <meta charset="utf-8" />
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/mqtt_protocol.js"></script>
+      <script type="text/javascript" src="js/mqtt_controller.js"></script>
+      <script type="text/javascript" src="js/testing.js"></script>
+      <title>MQTT TEST</title>
+      <style>
+        button {
+          width:100px;
+          height:100px;
+          }
+      </style>
     </head>
     <body>
-
-        <center><h1>Pruebas MQTT</h1></center>
-        <p>Test 1 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, sin estar suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
-        <button onclick="test1(0);">Test 1 - QS 0</button>
-        <button onclick="test1(1);">Test 1 - QS 1</button>
-        <button onclick="test1(2);">Test 1 - QS 2</button>
-        <br>
-        <p>Test 2 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, estando suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
-        <button onclick="test2(0,0);">Test 2 - QS Envío 0, QS Recepción 0</button>
-        <button onclick="test2(1,0);">Test 2 - QS Envío 1, QS Recepción 0</button>
-        <button onclick="test2(2,0);">Test 2 - QS Envío 2, QS Recepción 0</button>
-        <br>
-        <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 1</button>
-        <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 1</button>
-        <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 1</button>
-        <br>
-        <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 2</button>
-        <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 2</button>
-        <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 2</button>
-        <br>
-        <button onclick="finish_test();">Finalizar Test</button>
-        <div id="estado"></div>
-        <div id="mensajes"></div>
-    </body>
+      <center><h1>Pruebas MQTT</h1></center>
+      <p>Test 1 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, sin estar suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
+      <button onclick="test1(0);">Test 1 - QS 0</button>
+      <button onclick="test1(1);">Test 1 - QS 1</button>
+      <button onclick="test1(2);">Test 1 - QS 2</button>
+      <button onclick="finish_test();">Finalizar Test</button>
+      <br>
+      <p>Test 2 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, estando suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
+      <button onclick="test2(0,0);">Test 2 - QS Envío 0, QS Recepción 0</button>
+      <button onclick="test2(1,0);">Test 2 - QS Envío 1, QS Recepción 0</button>
+      <button onclick="test2(2,0);">Test 2 - QS Envío 2, QS Recepción 0</button>
+      <br>
+      <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 1</button>
+      <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 1</button>
+      <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 1</button>
+      <br>
+      <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 2</button>
+      <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 2</button>
+      <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 2</button>
+      <br>
+      <div id="estado"></div>
+      <div id="mensajes"></div>
+  </body>
 </html>
