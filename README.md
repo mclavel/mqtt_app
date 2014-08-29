@@ -1,4 +1,4 @@
-Pokemon
+MQTT APP Test
 ---
 
-Vamos que se puede :D
+Aplicación que implementa MQTT con tal de realizar pruebas de rendimiento al protocolo.
