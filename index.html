@@ -12,33 +12,94 @@
       <title>MQTT TEST</title>
       <style>
         button {
-          width:100px;
-          height:100px;
+          width:250px;
+          height:200px;
           }
       </style>
     </head>
     <body>
-      <center><h1>Pruebas MQTT</h1></center>
-      <p>Test 1 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, sin estar suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
-      <button onclick="test1(0);">Test 1 - QS 0</button>
-      <button onclick="test1(1);">Test 1 - QS 1</button>
-      <button onclick="test1(2);">Test 1 - QS 2</button>
+      <center><h1>Pruebas MQTT</h1>
+      <h2>TEST 2</h2>
+      <p>Test 1 envía XXX cadenas de texto con diversos niveles de calidad de servicio, sin estar suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
+      <h2>10 Cadenas</h2>
+      <button onclick="cant_msj = 10; test1(0);">[10] T1 - QS-ENV 0</button>
+      <button onclick="cant_msj = 10; test1(1);">[10] T1 - QS-ENV 1</button>
+      <button onclick="cant_msj = 10; test1(2);">[10] T1 - QS-ENV 2</button>
+      <button onclick="finish_test();">Finalizar Test</button>
+      <h2>50 Cadenas</h2>
+      <button onclick="cant_msj = 50; test1(0);">[50] T1 - QS-ENV 0</button>
+      <button onclick="cant_msj = 50; test1(1);">[50] T1 - QS-ENV 1</button>
+      <button onclick="cant_msj = 50; test1(2);">[50] T1 - QS-ENV 2</button>
+      <button onclick="finish_test();">Finalizar Test</button>
+      <h2>100 Cadenas</h2>
+      <button onclick="cant_msj = 100; test1(0);">[100] T1 - QS-ENV 0</button>
+      <button onclick="cant_msj = 100; test1(1);">[100] T1 - QS-ENV 1</button>
+      <button onclick="cant_msj = 100; test1(2);">[100] T1 - QS-ENV 2</button>
+      <button onclick="finish_test();">Finalizar Test</button>
+      <h2>250 Cadenas</h2>
+      <button onclick="cant_msj = 250; test1(0);">[250] T1 - QS-ENV 0</button>
+      <button onclick="cant_msj = 250; test1(1);">[250] T1 - QS-ENV 1</button>
+      <button onclick="cant_msj = 250; test1(2);">[250] T1 - QS-ENV 2</button>
+      <button onclick="finish_test();">Finalizar Test</button>
+      <h2>500 Cadenas</h2>
+      <button onclick="cant_msj = 500; test1(0);">[500] T1 - QS-ENV 0</button>
+      <button onclick="cant_msj = 500; test1(1);">[500] T1 - QS-ENV 1</button>
+      <button onclick="cant_msj = 500; test1(2);">[500] T1 - QS-ENV 2</button>
       <button onclick="finish_test();">Finalizar Test</button>
       <br>
+      <h2>TEST 2</h2>
       <p>Test 2 envía 1000 cadenas de texto con diversos niveles de calidad de servicio, estando suscritos al tópico. Se analiza la cantidad de tráfico generado y el consumo energético.</p>
-      <button onclick="test2(0,0);">Test 2 - QS Envío 0, QS Recepción 0</button>
-      <button onclick="test2(1,0);">Test 2 - QS Envío 1, QS Recepción 0</button>
-      <button onclick="test2(2,0);">Test 2 - QS Envío 2, QS Recepción 0</button>
+      <h2>10 Cadenas</h2>
+      <button onclick="cant_msj = 10; test2(0,0);">[10] Test 2 - QS Envío 0, QS Recepción 0</button>
+      <button onclick="cant_msj = 10; test2(1,0);">[10] Test 2 - QS Envío 1, QS Recepción 0</button>
+      <button onclick="cant_msj = 10; test2(2,0);">[10] Test 2 - QS Envío 2, QS Recepción 0</button>
       <br>
-      <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 1</button>
-      <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 1</button>
-      <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 1</button>
+      <button onclick="cant_msj = 10; test2(0,1);">[10] Test 2 - QS Envío 0, QS Recepción 1</button>
+      <button onclick="cant_msj = 10; test2(1,1);">[10] Test 2 - QS Envío 1, QS Recepción 1</button>
+      <button onclick="cant_msj = 10; test2(2,1);">[10] Test 2 - QS Envío 2, QS Recepción 1</button>
       <br>
-      <button onclick="test2(0,1);">Test 2 - QS Envío 0, QS Recepción 2</button>
-      <button onclick="test2(1,1);">Test 2 - QS Envío 1, QS Recepción 2</button>
-      <button onclick="test2(2,1);">Test 2 - QS Envío 2, QS Recepción 2</button>
+      <button onclick="cant_msj = 10; test2(0,1);">[10] Test 2 - QS Envío 0, QS Recepción 2</button>
+      <button onclick="cant_msj = 10; test2(1,1);">[10] Test 2 - QS Envío 1, QS Recepción 2</button>
+      <button onclick="cant_msj = 10; test2(2,1);">[10] Test 2 - QS Envío 2, QS Recepción 2</button>
+      <h2>50 Cadenas</h2>
+      <button onclick="cant_msj = 50; test2(0,0);">[50] Test 2 - QS Envío 0, QS Recepción 0</button>
+      <button onclick="cant_msj = 50; test2(1,0);">[50] Test 2 - QS Envío 1, QS Recepción 0</button>
+      <button onclick="cant_msj = 50; test2(2,0);">[50] Test 2 - QS Envío 2, QS Recepción 0</button>
       <br>
+      <button onclick="cant_msj = 50; test2(0,1);">[50] Test 2 - QS Envío 0, QS Recepción 1</button>
+      <button onclick="cant_msj = 50; test2(1,1);">[50] Test 2 - QS Envío 1, QS Recepción 1</button>
+      <button onclick="cant_msj = 50; test2(2,1);">[50] Test 2 - QS Envío 2, QS Recepción 1</button>
+      <br>
+      <button onclick="cant_msj = 100; test2(0,1);">[50] Test 2 - QS Envío 0, QS Recepción 2</button>
+      <button onclick="cant_msj = 100; test2(1,1);">[50] Test 2 - QS Envío 1, QS Recepción 2</button>
+      <button onclick="cant_msj = 100; test2(2,1);">[50] Test 2 - QS Envío 2, QS Recepción 2</button>
+      <h2>100 Cadenas</h2>
+      <button onclick="cant_msj = 100; test2(0,0);">[100] Test 2 - QS Envío 0, QS Recepción 0</button>
+      <button onclick="cant_msj = 100; test2(1,0);">[100] Test 2 - QS Envío 1, QS Recepción 0</button>
+      <button onclick="cant_msj = 100; test2(2,0);">[100] Test 2 - QS Envío 2, QS Recepción 0</button>
+      <br>
+      <button onclick="cant_msj = 100; test2(0,1);">[100] Test 2 - QS Envío 0, QS Recepción 1</button>
+      <button onclick="cant_msj = 100; test2(1,1);">[100] Test 2 - QS Envío 1, QS Recepción 1</button>
+      <button onclick="cant_msj = 100; test2(2,1);">[100] Test 2 - QS Envío 2, QS Recepción 1</button>
+      <br>
+      <button onclick="cant_msj = 100; test2(0,1);">[100] Test 2 - QS Envío 0, QS Recepción 2</button>
+      <button onclick="cant_msj = 100; test2(1,1);">[100] Test 2 - QS Envío 1, QS Recepción 2</button>
+      <button onclick="cant_msj = 100; test2(2,1);">[100] Test 2 - QS Envío 2, QS Recepción 2</button>
+      <h2>250 Cadenas</h2>
+      <button onclick="cant_msj = 250; test2(0,0);">[250] Test 2 - QS Envío 0, QS Recepción 0</button>
+      <button onclick="cant_msj = 250; test2(1,0);">[250] Test 2 - QS Envío 1, QS Recepción 0</button>
+      <button onclick="cant_msj = 250; test2(2,0);">[250] Test 2 - QS Envío 2, QS Recepción 0</button>
+      <br>
+      <button onclick="cant_msj = 250; test2(0,1);">[250] Test 2 - QS Envío 0, QS Recepción 1</button>
+      <button onclick="cant_msj = 250; test2(1,1);">[250] Test 2 - QS Envío 1, QS Recepción 1</button>
+      <button onclick="cant_msj = 250; test2(2,1);">[250] Test 2 - QS Envío 2, QS Recepción 1</button>
+      <br>
+      <button onclick="cant_msj = 250; test2(0,1);">[250] Test 2 - QS Envío 0, QS Recepción 2</button>
+      <button onclick="cant_msj = 250; test2(1,1);">[250] Test 2 - QS Envío 1, QS Recepción 2</button>
+      <button onclick="cant_msj = 250; test2(2,1);">[250] Test 2 - QS Envío 2, QS Recepción 2</button>
+
       <div id="estado"></div>
       <div id="mensajes"></div>
+    </center>
   </body>
 </html>
