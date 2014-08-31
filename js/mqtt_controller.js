@@ -1,9 +1,13 @@
-  //Using the HiveMQ public Broker, with a random client Id
- var client = new Messaging.Client("broker.mqttdashboard.com", 8000, "USER_ID_" + parseInt(Math.random() * 100, 10));
- var msj_rec = 0;
- var msj_env = 0;
+var msj_rec = 0;
+var msj_env = 0;
+var cant_msj = 1000;
+var delay = 100;
+//var server = "204.87.169.95"
+var server = "192.168.0.24"
 
- var cant_msj = 1000;
+
+  //Using the HiveMQ public Broker, with a random client Id
+ var client = new Messaging.Client(server, 80, "USER_ID_" + parseInt(Math.random() * 100, 10));
 
  //Gets  called if the websocket/mqtt connection gets disconnected for any reason
  client.onConnectionLost = function (responseObject) {

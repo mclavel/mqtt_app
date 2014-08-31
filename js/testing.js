@@ -7,9 +7,11 @@ var finish_test = function(){
 //cadenas de texto, solo enviando el texto (no suscrito) con una calidad de servicio qs.
 var test1 = function (qs) {
     var run_test_1 = function(qs){
-      for(var i = 0; i < cant_msj; i++){
-        publish("hola mundo "+i,'test1/',qs);
+
+      for (var i = 0; i < cant_msj; i++) {
+        setTimeout(function(j) { publish("hola mundo "+j,'test1/',qs); }, delay*i, i);
       }
+
       $('#estado').html("");
       $('#estado').append('<center><h1>########### FIN ENVIO TEST 1 ###########</h1></center><br/>');
     }
@@ -17,7 +19,7 @@ var test1 = function (qs) {
     $('#estado').append('<center><h1>########### INICIO TEST 1 ###########</h1></center><br/>');
 
     var options = {
-      timeout: 5,
+      timeout: 10,
       onSuccess: function () {
         //client.subscribe('test1/#', {qos: 0});
         run_test_1(qs);
@@ -34,9 +36,15 @@ var test1 = function (qs) {
 //cadenas de texto, enviando el texto a un tópico en cuestion y estando suscrito al mismo (con diversas qs).
 var test2 = function (qs_env, qs_rec) {
     var run_test_2 = function(qs_env){
-      for(var i = 0; i < cant_msj ; i++){
+      /*for(var i = 0; i < cant_msj ; i++){
         publish("hola mundo "+i,'test2/',qs_env);
+      }*/
+
+      for (var i = 0; i < cant_msj; i++) {
+        setTimeout(function(j) { publish("hola mundo "+j,'test2/',qs_env); }, delay*i, i);
       }
+
+
       $('#estado').html("");
       $('#estado').append('<center><h1>########### FIN ENVIO TEST 2 ###########</h1></center><br/>');
     }
@@ -45,7 +53,7 @@ var test2 = function (qs_env, qs_rec) {
     $('#estado').append('<center><h1>########### INICIO TEST 2 ###########</h1></center><br/>');
 
     var options = {
-      timeout: 5,
+      timeout: 10,
       onSuccess: function () {
         client.subscribe('test2/#', {qos: qs_rec});
         run_test_2(qs_env);
