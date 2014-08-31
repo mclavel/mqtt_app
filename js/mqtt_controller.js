@@ -1,6 +1,6 @@
 var msj_rec = 0;
 var msj_env = 0;
-var delay = 100;
+var delay = 250;
 //var server = "204.87.169.95"
 var server = "192.168.0.24"
 var cant_msj = 1000;
