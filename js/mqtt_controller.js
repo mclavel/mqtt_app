@@ -22,7 +22,9 @@ client.onMessageArrived = function (message) {
 };
 
 var publish = function (payload, topic, qos) {
-    var message = new Messaging.Message(payload);
+    var f=new Date();
+    var cad=f.getHours()+":"+f.getMinutes()+":"+f.getSeconds(); 
+    var message = new Messaging.Message(cad+" "+payload);
     message.destinationName = topic;
     message.qos = qos;
     client.send(message);
