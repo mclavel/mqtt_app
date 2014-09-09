@@ -11,7 +11,7 @@ var test1 = function (qs) {
     var run_test_1 = function(qs){
 
       for (var i = 0; i < cant_msj; i++) {
-        setTimeout(function(j) { publish("hola mundo "+j,'test1/',qs); }, delay*i, i);
+        setTimeout(function(j) { publish("hola mundo "+j,'test2/',qs); }, delay*i, i);
       }
 
       $('#estado').html("");
@@ -39,7 +39,7 @@ var test2 = function (qs_env, qs_rec) {
     var run_test_2 = function(qs_env){
 
       for (var i = 0; i < cant_msj; i++) {
-        setTimeout(function(j) { publish("hola mundo "+j,'test2/',qs_env); }, delay*i, i);
+        setTimeout(function(j) { publish("hola mundo "+j,'test1/',qs_env); }, delay*i, i);
       }
 
       $('#estado').html("");
