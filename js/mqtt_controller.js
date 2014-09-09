@@ -15,7 +15,6 @@ client.onMessageArrived = function (message) {
     $('#mensajes').append('<span>Topico: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
     msj_rec = msj_rec+1;
     console.log("msj_rec:" + msj_rec);
-    }
 };
 
 var publish = function (payload, topic, qos) {
