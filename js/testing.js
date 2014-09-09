@@ -61,3 +61,17 @@ var test2 = function (qs_env, qs_rec) {
       };
     client.connect(options);
 }
+
+var test3 = function (qs_rec) {
+
+    var options = {
+      timeout: 7,
+      onSuccess: function () {
+        client.subscribe('test2/#', {qos: qs_rec});
+        },
+      onFailure: function (message) {
+        alert("Error conexion: " + message.errorMessage);
+        }
+      };
+    client.connect(options);
+}
