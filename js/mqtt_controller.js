@@ -14,7 +14,7 @@ client.onConnectionLost = function (responseObject) {
 client.onMessageArrived = function (message) {
     $('#mensajes').append('<span>Topico: ' + message.destinationName + '  | ' + message.payloadString + '</span><br/>');
     msj_rec = msj_rec+1;
-    console.log("msj_rec:" + msj_rec);
+    console.log(message.payloadString);
 };
 
 var publish = function (payload, topic, qos) {
@@ -25,7 +25,7 @@ var publish = function (payload, topic, qos) {
     message.qos = qos;
     client.send(message);
     msj_env = msj_env+1;
-    console.log("msj_env:" + msj_env);
+    //console.log("msj_env:" + msj_env);
     if(msj_env==cant_msj){
     msj_env=0;
     }
