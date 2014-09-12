@@ -2,7 +2,7 @@ var msj_rec = 0;
 var msj_env = 0;
 var delay = 250;
 //var server = "204.87.169.95"
-var server = "192.168.1.118"
+var server = "192.168.1.128"
 var cant_msj = 1000;
 
 var client = new Messaging.Client(server, 80, "USER_ID_" + parseInt(Math.random() * 100, 10));
